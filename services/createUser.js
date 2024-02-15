@@ -8,6 +8,10 @@ const params = {
     headers: createUser.headers
 };
 
+/**
+ * Executes the createUser service.
+ * @returns {Promise} A promise that resolves with the result of the service execution.
+ */
 export const execute = () => {
     var url = `${general.baseUrl}${createUser.url}`;
     return http.post(url, payload, params);
