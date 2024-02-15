@@ -1,9 +1,16 @@
 import * as storeGetService from '../../services/storeInventory.js'
 import { sleep, check } from 'k6';
 
+
 /**
- * The options for the getPetTest script.
- * @type {Options}
+ * Represents the options for the store inventory test.
+ * @typedef {Object} StoreInventoryOptions
+ * @property {Array} stages - The stages for the test.
+ */
+
+/**
+ * The options for the store inventory test.
+ * @type {StoreInventoryOptions}
  */
 export let options = {
     stages: [
@@ -11,8 +18,9 @@ export let options = {
     ]
 };
 
+
 /**
- * Function to test the retrieval of a pet by its ID.
+ * Function to test the store inventory retrieval by Id.
  */
 export default function () {
     const response = storeGetService.execute();
